@@ -1201,8 +1201,8 @@
 <body>
 
 <!-- ANNOUNCEMENT BAR -->
-<div class="bar">
-  ⚡ 7 VAGAS DISPONÍVEIS HOJE — SEGUNDA-FEIRA, 30 DE MARÇO DE 2026 — COM R$1.000 DE DESCONTO
+<div class="bar" id="announcement-bar">
+  ⚡ 7 VAGAS DISPONÍVEIS HOJE — COM R$1.000 DE DESCONTO
 </div>
 
 <!-- HERO -->
@@ -1630,6 +1630,14 @@
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closePopup();
   });
+
+  const announcementBar = document.getElementById('announcement-bar');
+  if (announcementBar) {
+    const now = new Date();
+    const weekDay = new Intl.DateTimeFormat('pt-BR', { weekday: 'long' }).format(now).toUpperCase();
+    const fullDate = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' }).format(now).toUpperCase();
+    announcementBar.textContent = `⚡ 7 VAGAS DISPONÍVEIS HOJE — ${weekDay}, ${fullDate} — COM R$1.000 DE DESCONTO`;
+  }
 
   const fadeEls = document.querySelectorAll('.fade-in');
   const observer = new IntersectionObserver(entries => {
