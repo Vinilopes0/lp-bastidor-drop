@@ -1636,7 +1636,7 @@
     const now = new Date();
     const weekDay = new Intl.DateTimeFormat('pt-BR', { weekday: 'long' }).format(now).toUpperCase();
     const fullDate = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' }).format(now).toUpperCase();
-    announcementBar.textContent = `⚡ 7 VAGAS DISPONÍVEIS HOJE — ${weekDay}, ${fullDate} — COM R$1.000 DE DESCONTO`;
+    announcementBar.textContent = `⚡ 7 VAGAS DISPONÍVEIS HOJE - ${weekDay}, ${fullDate} - COM R$1.000 DE DESCONTO`;
   }
 
   const fadeEls = document.querySelectorAll('.fade-in');
